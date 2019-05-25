@@ -1,16 +1,52 @@
 \documentclass[oneside,10pt]{book}
 
-\usepackage{html}
+%% font setup for screen reading
+\renewcommand{\familydefault}{\sfdefault}\normalfont
 
-% %% font setup for screen reading
-% \renewcommand{\familydefault}{\sfdefault}\normalfont
-% 
-% %% mobile phone optimized
-% %% A6
-% \usepackage[paperwidth=148mm,paperheight=105mm,margin=2mm]{geometry}
-% 
-% %% hyperlinks pdf style
-% \usepackage[unicode,colorlinks=true]{hyperref}
+%% mobile phone optimized
+%% A6
+\usepackage[paperwidth=148mm,paperheight=105mm,margin=2mm]{geometry}
 
-%% typical macros
-% \newcommand{\email}[1]{$<$\href{mailto:#1}{#1}$>$}
+%% hyperlinks pdf style
+\usepackage[unicode,colorlinks=true]{hyperref}
+
+% typical macros
+\newcommand{\email}[1]{$<$\href{mailto:#1}{#1}$>$}
+
+% relative sectioning
+\usepackage{ifthen}
+\newcounter{secdepth}\setcounter{secdepth}{0}
+\newcommand{\secup}{\addtocounter{secdepth}{1}}
+\newcommand{\secdown}{\addtocounter{secdepth}{-1}}
+\newcommand{\secrel}[1]{
+\ifthenelse{\equal{\value{secdepth}}{0}}{\part{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-1}}{\chapter{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-2}}{\section{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-3}}{\subsection{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-4}}{\subsubsection{#1}}{}
+}
+\newcommand{\secly}[1]{
+\section*{#1}
+\addcontentsline{toc}{section}{#1}
+}
+\newcommand{\subsecly}[1]{
+\subsection*{#1}
+\addcontentsline{toc}{subsection}{#1}
+}
+
+\usepackage{listings}
+\lstset{
+basicstyle=\small,
+frame=single,
+numbers=left,numberstyle=\small,numbersep=2mm,
+xleftmargin=3mm,xrightmargin=2mm,
+tabsize=4,
+keywordstyle=\color{red},
+commentstyle=\color{blue},
+extendedchars=\true,
+% fix russian comments: https://dxdy.ru/post509540.html
+keepspaces = true,
+%breaklines=false,breakatwhitespace=true
+}
+
+\newcommand{\lst}[2]{\lstinputlisting[#2]{#1}}
