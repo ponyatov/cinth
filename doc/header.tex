@@ -2,16 +2,24 @@
 
 %% font setup for screen reading
 \renewcommand{\familydefault}{\sfdefault}\normalfont
-
 %% mobile phone optimized
-%% A6
-\usepackage[paperwidth=148mm,paperheight=105mm,margin=2mm]{geometry}
+\usepackage[paperwidth=118.8mm,paperheight=68.2mm,margin=2mm]{geometry}
+%% fix first blank page
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
 
 %% hyperlinks pdf style
 \usepackage[unicode,colorlinks=true]{hyperref}
 
 % typical macros
 \newcommand{\email}[1]{$<$\href{mailto:#1}{#1}$>$}
+\newcommand{\note}[1]{\footnote{\ #1}}
+
+% misc
+%% [nosep] option in lists/enums
+\usepackage{enumitem}
+%% frames
+\usepackage{framed}
 
 % relative sectioning
 \usepackage{ifthen}
@@ -50,3 +58,6 @@ keepspaces = true,
 }
 
 \newcommand{\lst}[2]{\lstinputlisting[#2]{#1}}
+
+\newcommand{\emc}{emC}
+\newcommand{\cpp}{C++}

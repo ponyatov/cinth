@@ -1,4 +1,6 @@
-TEX = manual.tex header.tex
+TEX  = manual.tex header.tex
+TEX += intro.tex
+TEX += frame.tex io.tex meta.tex
 
 LATEX = pdflatex -halt-on-error
 
