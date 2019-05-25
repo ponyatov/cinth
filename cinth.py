@@ -23,6 +23,12 @@ class Frame:
                                     
     def __floordiv__(self,that):
         self.nest.append(that) ; return self
+        
+class Active(Frame): pass
+
+class Cmd(Active): pass
+
+class VM(Active): pass
 
 class IO(Frame): pass
 

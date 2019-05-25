@@ -1,0 +1,38 @@
+\secrel{EDS: Executable Data Structure conception}
+
+You here about Lisp and other derivatives: very small interpreter engine,
+executes dynamic lists. That's all the magic. In this short intro, we'll play
+with \term{executable data structure}s. If some part of data structure has the
+ability to be executed (by a \term{data interpreter}) it means that this
+structure has \term{execution semantics}.
+
+Such property gives a great power in programming: you or any user can modify the
+application in runtime, including app self-modification. Of cause, such dynamic
+nature has a nuclear power which can become a doomsday weapon especially in
+hands of an unskilled user. Its destructive force depends on the code quality
+and abilities you provide in EDS interpreter:
+\begin{itemize}[nosep]
+  \item 
+what commands and interfaces available?
+  \item 
+can core EDS of your application be modified (and totally broken) or saved for later use (with malware injected)?
+  \item 
+do you have protection against unwitted infinite recursion with a fatal memory leak or processor overload?
+  \item 
+do you use dynamic compilation for executable parts of your EDSes which produce real machine code?
+\end{itemize}
+
+\paragraph{Database with executable data}\ \\
+
+Minsky’s frame model \ref{frame}\ suggests the presence of executable semantics:
+there are \term{daemon}s and executable \emph{slot}s at the level of
+object/graph database engine. It introduces a notably big difference from
+classical databases (including NoSQL): \emph{we have active data represents the
+computational process}, which can be executed in a database context.
+
+Executable data drastically increases computational abilities due to introducing
+\term{homoiconicity} in place of passive data storage, which let as to do
+\term{metaprogramming} and complex logic and symbolic computing, applicable to a
+running system itself. As an example, we can extend an object database engine by
+a web server, and in result we'll get an application server with logic driven by
+frame-represented models.

@@ -1,6 +1,7 @@
 TEX  = manual.tex header.tex
 TEX += intro.tex
 TEX += frame.tex io.tex meta.tex
+TEX += *.tex
 
 SRC = *.py
 
