@@ -8,5 +8,5 @@ doc/manual.pdf: doc/Makefile doc/*.tex doc/*.py
 
 NOW = $(shell date +%d%m%y)
 release: doc/manual.pdf
-	git tag $(NOW)
+	git tag $(NOW) ; git push --tags gh
 	cp $< cinth_$(NOW).pdf
