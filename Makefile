@@ -1,0 +1,2 @@
+all: cinth.py
+	python $^

@@ -1,0 +1,8 @@
+./.project
+./.settings/org.eclipse.core.runtime.prefs
+./.settings/org.eclipse.core.resources.prefs
+.externalToolBuilders/cinth_make.launch
+.gitignore
+
+.pydevproject
+cinth.py
