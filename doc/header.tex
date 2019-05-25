@@ -11,9 +11,18 @@
 %% hyperlinks pdf style
 \usepackage[unicode,colorlinks=true]{hyperref}
 
+% xcolor fixes
+\usepackage{xcolor}
+\definecolor{red}{rgb}{0.7,0,0}
+\definecolor{green}{rgb}{0,0.3,0}
+\definecolor{blue}{rgb}{0,0,0.5}
+\definecolor{magenta}{rgb}{0.7,0,0.7}
+
 % typical macros
 \newcommand{\email}[1]{$<$\href{mailto:#1}{#1}$>$}
 \newcommand{\note}[1]{\footnote{\ #1}}
+\newcommand{\term}[1]{\textcolor{green}{\textit{#1}}}
+\renewcommand{\emph}[1]{\textcolor{blue}{#1}}
 
 % misc
 %% [nosep] option in lists/enums

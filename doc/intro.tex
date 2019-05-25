@@ -10,6 +10,28 @@ devices or legacy code.
 
 These notes provide some solution and approach to making software development in
 any programming language and toolchain using Python. It can be formulated as:
-\begin{framed}\noindent\centering\Large
+\begin{framed}\noindent\centering\LARGE
 write in any programming language in Python
 \end{framed}
+You can follow this method with any other high-level \term{host language} you
+want: Scala, Haskell, Java,.. or even create your own DSL language for tasks you
+are solving personally. That's the idea of using \term{generative
+metaprogramming}: you can use your favorite language as higher level as you can,
+to generate low-level C, or maybe use even less lowlevel LLVM as your's custom
+compiler backend.
+
+\clearpage
+\emph{You should also be warned that this method has two main disadvantages}.
+First, \textbf{this method only can be applied to projects which looks like a
+bunch of interconnected code templates}. If you do something very repeatable
+every day, coping your code snippets again and again, here's the point where
+this method tends to work well. In case you mostly write new code than reuse
+your old one, it is much much simpler just to use manual coding and classical
+copy and paste.
+
+Here we found the second problem: \textbf{generative metaprogramming has an
+extra steep learning curve}. Factically you must reimplement the whole
+metaprogramming framework from scratch adapting it to your own needs off the
+roots. The more complex methods you are using, and the more cryptic the
+programming language you are targeting your code generator, this complexity
+rises more and more.
