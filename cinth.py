@@ -19,7 +19,7 @@ class Frame:
     def pad(self,n):
         return '\n' + '\t' * n
     def head(self,prefix=''):
-        return '%s<%s:%s>' % (prefix, self.type, self.val)
+        return '%s<%s:%s> @%x' % (prefix, self.type, self.val, id(self))
                                     
     def __floordiv__(self,that):
         self.nest.append(that) ; return self

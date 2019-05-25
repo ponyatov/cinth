@@ -10,7 +10,13 @@ applications. In result, we can represent such as things like attribute grammars
 and AST, any source code, files and directory structure, and relations between
 programming objects (both at a domain model and source code level).
 
-\lst{frame1.py}{language=Python}
+\pylst{frame1}
+
+To be able to see any frame in a human-readable form, we'll define dumping
+methods which will print any object in a text tree form. The deeper the element,
+the more tabs will be used to pad it from the left side.
+
+\pylst{frame_dump}
 
 \input{active}
 
